@@ -24,3 +24,20 @@ function mostrarLista() {
         lista.appendChild(li);
     });
 }
+
+
+function sortearAmigo() {
+    if (amigos.length === 0) {
+        alert("Agrega al menos un amigo antes de sortear.");
+        return;
+    }
+    const indice = Math.floor(Math.random() * amigos.length);
+    const ganador = amigos[indice];
+
+    const resultado = document.getElementById('resultado');
+    resultado.innerHTML = `<li>${ganador} es el amigo secreto 🎉</li>`;
+
+    // Vacía la lista y el arreglo para empezar un nuevo juego
+    amigos = [];
+    mostrarLista();
+}
